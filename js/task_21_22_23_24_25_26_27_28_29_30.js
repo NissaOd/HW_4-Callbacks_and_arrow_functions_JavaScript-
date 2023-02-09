@@ -409,11 +409,96 @@ console.log(average); // Масив об'єктів з іменами Poly і Ho
 
 
 // 27
+// Доповни функцію getInactiveUsers(users) таким чином, щоб
+// вона повертала масив неактивних користувачів, значення властивості isActive яких - false.
+
+// Оголошена змінна getInactiveUsers.
+// Змінній getInactiveUsers присвоєна стрілочна функція з параметром users
+// Для перебирання параметра users використовується метод filter()
+// Виклик функції із зазначеним масивом користувачів повертає масив об 'єктів
+// користувачів з іменами Moore Hensley, Ross Vazquez і Blackburn Dotson
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// const getInactiveUsers = (users) => users.filter(user => !user.isActive);
+
+
+
+
+
+
 
 
 // ______________________________________________
 
 // 28
+/*
+Якщо метод filter(callback) використовується для пошуку всіх елементів, що задовольняють умову, то метод find(callback) дозволяє знайти і повернути перший відповідний елемент, після чого перебирання масиву припиняється. Тобто він шукає до першого збігу.
+
+масив.find((element, index, array) => {
+  // Тіло колбек-функції
+});
+Не змінює оригінальний масив.
+Поелементо перебирає оригінальний масив.
+Повертає перший елемент, що задовольняє умову, тобто коли колбек повертає true.
+Якщо жоден елемент не задовольнив умову, тобто для всіх елементів колбек повернув false, метод повертає undefined.
+Метод find() використовується для одного завдання - пошуку елемента за унікальним значенням властивості. Наприклад, пошук користувача за поштою, автомобіля - за серійним номером, книги - за назвою тощо.
+
+const colorPickerOptions = [
+  { label: "red", color: "#F44336" },
+  { label: "green", color: "#4CAF50" },
+  { label: "blue", color: "#2196F3" },
+  { label: "pink", color: "#E91E63" },
+  { label: "indigo", color: "#3F51B5" },
+];
+
+colorPickerOptions.find((option) => option.label === "blue"); // { label: "blue", color: "#2196F3" }
+colorPickerOptions.find((option) => option.label === "pink"); // { label: "pink", color: "#E91E63" }
+colorPickerOptions.find((option) => option.label === "white"); // undefined
+
+*/
+
+// Використовуючи метод find(), доповни код таким чином, щоб:
+
+//     У змінній bookWithTitle утворився об 'єкт книги, 
+// назва якої(властивість title) збігається зі значенням змінної BOOK_TITLE.
+// У змінній bookByAuthor утворився об 'єкт книги, автор якої (властивість author) 
+// збігається зі значенням змінної AUTHOR.
+// Оголошена змінна books
+// Значення змінної books - це масив
+// Оголошена змінна BOOK_TITLE
+// Значення змінної BOOK_TITLE - це рядок "The Dream of a Ridiculous Man"
+// Оголошена змінна AUTHOR
+// Значення змінної AUTHOR - це рядок "Robert Sheckley"
+// Оголошена змінна bookWithTitle
+// Значення змінної bookWithTitle - це об 'єкт книги з назвою вище "The Dream of a Ridiculous Man"
+// Оголошена змінна bookByAuthor
+// Значення змінної bookByAuthor - це об 'єкт книги автора "Robert Sheckley"
+// Для перебирання масиву books використаний метод find()
+
+// const books = [
+//     {
+//       title: 'The Last Kingdom',
+//       author: 'Bernard Cornwell',
+//       rating: 8.38,
+//     },
+//     {
+//       title: 'Beside Still Waters',
+//       author: 'Robert Sheckley',
+//       rating: 8.51,
+//     },
+//     {
+//       title: 'The Dream of a Ridiculous Man',
+//       author: 'Fyodor Dostoevsky',
+//       rating: 7.75,
+//     },
+//     { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   ];
+//   const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+//   const AUTHOR = 'Robert Sheckley';
+//   // Change code below this line
+
+//   const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+//   const bookByAuthor = books.find(book => book.author === AUTHOR);
 
 
 // ______________________________________________
@@ -421,15 +506,101 @@ console.log(average); // Масив об'єктів з іменами Poly і Ho
 
 // 29
 
+// Доповни функцію getUserWithEmail(users, email) таким чином, щоб вона повертала
+// об 'єкт користувача, пошта якого (властивість email) збігається зі значенням параметра email.
+
+// Оголошена функція getUserWithEmail(users, email)
+
+// Для перебирання параметра users використовується метод find()
+
+// Якщо значення параметра email - це "shereeanthony@kog.com", функція повертає
+// об 'єкт користувача з ім'
+// ям Sheree Anthony
+
+// Якщо значення параметра email - це "elmahead@omatom.com", функція повертає
+// об 'єкт користувача з ім'
+// ям Elma Head
+
+// Якщо значення параметра email - це "blackburndotson@furnigeer.com", функція
+// повертає об 'єкт користувача з ім'
+// ям Blackburn Dotson
+
+// Якщо в масиві users відсутній користувач з поштою із параметра email,
+// функція повертає undefined
+
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+
+
+// const getUserWithEmail = (users, email) => users.find(user => user.email === email);
+
+
+
+
+
+
 // ______________________________________________
 
-
-
-
-
-
-
-// ______________________________________________
 
 
 // 30
+/*
+Метод every(callback) перевіряє, чи проходять всі елементи масиву тест колбек-функції. Повертає true або false.
+
+масив.every((element, index, array) => {
+  // Тіло колбек-функції
+});
+Не змінює оригінальний масив.
+Поелементо перебирає оригінальний масив.
+Повертає true, якщо всі елементи масиву задовольняють умову.
+Повертає false, якщо хоча б один елемент масиву не задовольняє умову.
+Перебирання масиву припиняється, якщо колбек повертає false.
+// Усі елементи більші або дорівнюють нулю? - так
+[1, 2, 3, 4, 5].every((value) => value >= 0); // true
+
+// Усі елементи більші або дорівнюють нулю? - ні
+[1, 2, 3, -10, 4, 5].every((value) => value >= 0); // false
+При роботі з масивом об'єктів перевіряється значення якоїсь їх властивості.
+*/
+
+// Використовуючи метод every(), доповни код таким чином, щоб:
+
+// У змінній eachElementInFirstIsEven був результат перевірки всіх елементів масиву firstArray на парність.
+// У змінній eachElementInFirstIsOdd був результат перевірки всіх елементів масиву firstArray на непарність.
+// У змінній eachElementInSecondIsEven був результат перевірки всіх елементів масиву secondArray на парність.
+// У змінній eachElementInSecondIsOdd був результат перевірки всіх елементів масиву secondArray на непарність.
+// У змінній eachElementInThirdIsEven був результат перевірки всіх елементів масиву thirdArray на парність.
+// У змінній eachElementInThirdIsOdd був результат перевірки всіх елементів масиву thirdArray на непарність.
+// Оголошена змінна firstArray
+// Значення змінної firstArray - це масив [26, 94, 36, 18]
+// Оголошена змінна secondArray
+// Значення змінної secondArray - це масив [17, 61, 23]
+// Оголошена змінна thirdArray
+// Значення змінної thirdArray - це масив [17, 26, 94, 61, 36, 23, 18]
+// Оголошена змінна eachElementInFirstIsEven
+// Значення змінної eachElementInFirstIsEven - це буль true
+// Оголошена змінна eachElementInFirstIsOdd
+// Значення змінної eachElementInFirstIsOdd - це буль false
+// Оголошена змінна eachElementInSecondIsEven
+// Значення змінної eachElementInSecondIsEven - це буль false
+// Оголошена змінна eachElementInSecondIsOdd
+// Значення змінної eachElementInSecondIsOdd - це буль true
+// Оголошена змінна eachElementInThirdIsEven
+// Значення змінної eachElementInThirdIsEven - це буль false
+// Оголошена змінна eachElementInThirdIsOdd
+// Значення змінної eachElementInThirdIsOdd - це буль false
+// Для перебирання масивів використаний метод every()
+
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change code below this line
+
+const eachElementInFirstIsEven = firstArray.every(element => !(element % 2));
+const eachElementInFirstIsOdd = firstArray.every(element => element % 2);
+
+const eachElementInSecondIsEven = secondArray.every(element => !(element % 2));
+const eachElementInSecondIsOdd = secondArray.every(element => element % 2);
+
+const eachElementInThirdIsEven = thirdArray.every(element => !(element % 2));
+const eachElementInThirdIsOdd = thirdArray.every(element => element % 2);
